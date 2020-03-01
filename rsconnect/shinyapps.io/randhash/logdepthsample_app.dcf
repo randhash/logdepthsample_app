@@ -1,0 +1,10 @@
+name: logdepthsample_app
+title:
+username:
+account: randhash
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1885668
+bundleId: 2842105
+url: https://randhash.shinyapps.io/logdepthsample_app/
+when: 1583096349.33857
