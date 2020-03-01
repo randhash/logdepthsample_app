@@ -37,13 +37,14 @@ server <- function(input, output, session) {
               input$heightmin==0,
               is.na(input$heightmin),
               is.na(input$heightmax),
-              input$heightmin<0))) {
+              input$heightmin<0,
+              is.na(input$n)))) {
       output$pretext <- renderText({"Error: Adjust values."})
     } else {
       output$pretext <- renderText({""})
       #Calculate sample points
       ##Height
-      h <- exp(seq(log(input$heightmin), log(input$heightmax), length.out=ceiling(input$n)))
+      h <- exp(seq(log(input$heightmin), log(input$heightmax), length.out=max(c(2, ceiling(input$n)))))
       ##Convert height to depth
       d <- input$depth-h
       ##Add to data frame
